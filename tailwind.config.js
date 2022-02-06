@@ -50,7 +50,7 @@ module.exports = {
         },
       },
       fontSize: {
-        nab: "0.95rem",
+        nab: "0.9rem",
       },
     },
   },
