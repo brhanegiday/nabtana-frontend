@@ -1,7 +1,7 @@
 import React from "react";
 import NextLink from "next/link";
 import Filter from "../../components/FilterFC";
-import Company from "../../components/Company";
+import Company from "./Company";
 // Icons
 import { SearchIcon } from "@heroicons/react/solid";
 // data
