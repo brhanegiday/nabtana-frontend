@@ -19,7 +19,7 @@ function Header() {
             </a>
           </NextLink>
         </div>
-        <div className="flex space-x-6 items-center">
+        <div className="hidden lg:flex space-x-6 items-center">
           <NextLink href="/">
             <a className="cursor-pointer">
               <p className="text-shark-500 font-medium text-nab">Home</p>
