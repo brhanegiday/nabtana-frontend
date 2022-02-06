@@ -4,11 +4,10 @@ export const companies = [
   {
     id: uuidv4(),
     companyName: "Gezana",
-    location: "Mekelle,Tigray",
-    companyExcerpt:
-      "After seven years in the production of electronic gadgets, under his company",
+    location: "Sans Francisco,California",
+    companyExcerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     companyDesc:
-      "Founded in August of 2008 and based in San Francisco, California, Airbnb is a trusted community marketplace for people to list, discover, and book unique accommodations around the world — online or from a mobile phone. Whether an apartment for a night, a castle for a week, or a villa for a month, Airbnb connects people to unique travel experiences, at any price point, in more than 33,000 cities and 192 countries. And with world-class customer service and a growing community of users, Airbnb is the easiest way for people to monetize their extra space and showcase it to an audience of millions.",
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate",
     industry: ["Consumer", "Healthcare"],
     status: ["Active", "Public"],
     companyLogo: "/companies/airbnb_logo.png",
@@ -58,21 +57,21 @@ export const companies = [
     id: uuidv4(),
     companyName: "Hadgi",
     location: "London,England",
-    companyExcerpt:
-      "After seven years in the production of electronic gadgets, under his company",
+    companyExcerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
     companyDesc:
-      "Founded in August of 2008 and based in San Francisco, California, Airbnb is a trusted community marketplace for people to list, discover, and book unique accommodations around the world — online or from a mobile phone. Whether an apartment for a night, a castle for a week, or a villa for a month, Airbnb connects people to unique travel experiences, at any price point, in more than 33,000 cities and 192 countries. And with world-class customer service and a growing community of users, Airbnb is the easiest way for people to monetize their extra space and showcase it to an audience of millions.",
+      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate",
     industry: ["Tourism"],
     status: ["Public"],
     companyLogo: "/companies/dropbox_logo.png",
     alt: "Hadgi Logo",
-    foundedYear: 2018,
+    foundedYear: 2020,
     teamSize: "200+",
     companySlug: "hadgi",
     website: "https://hadgi.com",
     founders: [
       {
         name: "Brhane Giday",
+        image: "",
         position: "CTO",
         aboutFounder:
           "Brhane Giday is the co-founder, Chief Strategy Officer, and Chairman of Airbnb China. Nathan plays a leading role in driving key strategic initiatives across the global business. Previously he oversaw the creation of Airbnb’s engineering, data science,",
@@ -86,8 +85,9 @@ export const companies = [
         ],
       },
       {
-        name: "Mewael Chesky",
+        name: "Mewael Gesesse",
         position: "CEO",
+        image: "",
         aboutFounder:
           "John Smith is the co-founder, Chief Strategy Officer, and Chairman of Airbnb China. Nathan plays a leading role in driving key strategic initiatives across the global business. Previously he oversaw the creation of Airbnb’s engineering, data science,",
         founderSocialLinks: [
