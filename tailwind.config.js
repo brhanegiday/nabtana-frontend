@@ -36,18 +36,6 @@ module.exports = {
           800: "#878888",
           900: "#6e6f6f",
         },
-        white: {
-          50: "#ffffff",
-          100: "#ffffff",
-          200: "#ffffff",
-          300: "#ffffff",
-          400: "#ffffff",
-          500: "#FFFFFF",
-          600: "#e6e6e6",
-          700: "#bfbfbf",
-          800: "#999999",
-          900: "#7d7d7d",
-        },
       },
       fontSize: {
         nab: "0.9rem",
