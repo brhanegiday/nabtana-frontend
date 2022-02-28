@@ -9,7 +9,7 @@ function AboutCompany({ companyDetail }) {
       <h4 className="text-shark-500 text-lg py-1">
         {companyDetail.companyExcerpt}
       </h4>
-      <p className="text-nab text-shark-500 py-1">
+      <p className="text-nab text-shark-400 py-1">
         {companyDetail.companyDesc}
       </p>
       <div className="flex items-center py-3 space-x-1">
