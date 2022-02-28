@@ -27,10 +27,10 @@ function Company({ company }) {
                 {company.companyExcerpt}
               </p>
               <div className="flex items-center space-x-2 py-3">
-                {company.industry?.map((industryType) => (
+                {company.industry?.map((industryType, index) => (
                   <div
                     className="bg-shark-300 py-1 px-3 rounded-md"
-                    key={company.id}
+                    key={`industryType+${index}`}
                   >
                     <p className="uppercase text-shark-500 text-[10px]">
                       {industryType}
@@ -39,10 +39,10 @@ function Company({ company }) {
                 ))}
               </div>
               <div className="flex items-center space-x-2">
-                {company.status?.map((statusType) => (
+                {company.status?.map((statusType, index) => (
                   <div
                     className="bg-shark-300 py-1 px-3 rounded-md"
-                    key={company.id}
+                    key={`statusType-${index}`}
                   >
                     <p className="uppercase text-shark-500 text-[10px]">
                       {statusType}
