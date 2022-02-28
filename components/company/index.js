@@ -1,31 +1,29 @@
 import Image from "next/image";
 import NavLink from "./NavLink";
 import AboutCompany from "./AboutCompany";
+import Founders from "./Founders";
 import CompanySummary from "./CompanySummary";
 function CompanyDetail({ company }) {
   return (
     <div className="pt-8 pb-8">
       <div className="xl:container  px-10  mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-6">
-          <div className="">
-            <h1 className="text-shark-500 text-2xl">About</h1>
-          </div>
-          <div className="col-span-5 flex justify-around">
-            <div className="w-3/5 ">
+        <div className="grid grid-cols-1 lg:grid-cols-5">
+          <h1 className="text-shark-500 text-2xl">About</h1>
+          <div className="col-span-3 border-b border-gray-400 pb-2 w0-5/6">
+            <div className="w-5/6">
               <div className="flex space-x-5 items-center">
                 <img
                   src={company.companyLogo}
                   alt={company.alt}
                   width="100px"
                   height="100px"
-                  priority
                 />
                 <div className="space-y-3">
                   <div className="flex items-center space-x-2">
-                    {company.industry?.map((industryType) => (
+                    {company.industry?.map((industryType, index) => (
                       <div
                         className="bg-shark-300 py-1 px-3 rounded-md"
-                        key={company.id}
+                        key={`compayID-${index}`}
                       >
                         <p className="uppercase text-shark-500 text-[10px]">
                           {industryType}
@@ -54,12 +52,23 @@ function CompanyDetail({ company }) {
                 <AboutCompany companyDetail={company} />
               </div>
             </div>
-            <div className="">
-              <CompanySummary />
+          </div>
+          <div className="w-full">
+            <CompanySummary company={company} />
+            <div className="mt-7">
+              <button
+                type="button"
+                className="py-1 px-5 rounded-md bg-shark-800"
+              >
+                <p className="text-white text-xs leading-5 font-semibold uppercase">
+                  follow
+                </p>
+              </button>
             </div>
           </div>
         </div>
         {/* Founders */}
+        <Founders company={company} />
       </div>
     </div>
   );
