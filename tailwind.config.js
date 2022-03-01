@@ -12,6 +12,18 @@ module.exports = {
       backgroundColor: ["checked"],
       borderColor: ["checked"],
       colors: {
+        tango: {
+          50: "#fff9f4",
+          100: "#fff2e9",
+          200: "#fee0c8",
+          300: "#fdcda7",
+          400: "#fca764",
+          500: "#FB8122",
+          600: "#e2741f",
+          700: "#bc611a",
+          800: "#974d14",
+          900: "#7b3f11",
+        },
         shark: {
           50: "#f4f4f4",
           100: "#e8e9ea",
