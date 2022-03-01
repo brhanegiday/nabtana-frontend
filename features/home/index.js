@@ -42,7 +42,7 @@ function Home() {
             <p className="text-[#1d2228] text-nab">
               Discover startup companies by industry, status, and company size.
             </p>
-            <div className="bg-white-100 border-[#979797] border-[1px] py-[0.8rem] px-5 rounded-md w-3/5 mt-5">
+            <div className="bg-white border-[#979797] border-[1px] py-[0.8rem] px-5 rounded-md w-3/5 mt-5">
               <div className=" w-full mx-auto relative flex items-center">
                 <SearchIcon className="text-shark-400 absolute left-4 w-4 h-4" />
                 <input
