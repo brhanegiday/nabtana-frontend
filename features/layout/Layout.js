@@ -6,7 +6,7 @@ function Layout(props) {
   return (
     <div>
       <Head>
-        {/* Title to be fixed */}
+        {/* TODO: Title to be fixed*/}
         <title>
           {props.title
             ? `${props.title} | Nabtana`
@@ -16,7 +16,7 @@ function Layout(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="bg-[#F5FBFE] min-h-screen">{props.children}</main>
+      <main className="bg-[#fcfafa] min-h-screen">{props.children}</main>
       <Footer />
     </div>
   );

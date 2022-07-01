@@ -1,17 +1,27 @@
 import Image from "next/image";
 import React from "react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 function Founders({ company }) {
   const { founders, website, companyName } = company;
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 mt-5">
       <h1 className="text-shark-500 text-2xl">Founders</h1>
-      <div className="col-span-3 border-b border-gray-400 pb-4">
+      <div className="col-span-3 w-full border-b pb-4">
         {founders?.map((founder, index) => (
-          <div key={`founder-${index}`} className="flex items-center py-2">
+          <div
+            key={`founder-${index}`}
+            className="flex justify-between items-center py-2"
+          >
             <div>
-              <h3 className="text-xl text-shark-500">{founder.name}</h3>
-              <p className="text-nab text-shark-400 py-2 w-4/5">
+              <h3 className="text-lg text-shark-500">{founder.name}</h3>
+              <p className="text-sm text-shark-400 py-2 w-4/5">
                 {founder.aboutFounder}
               </p>
             </div>
@@ -28,7 +38,7 @@ function Founders({ company }) {
               <div>
                 <h4 className="text-sm">{founder.name}</h4>
                 <a href={website} target="_blank" rel="noreferrer">
-                  <p className="text-nab text-[#007687] py-1"> {companyName}</p>
+                  <p className="text-sm text-[#007687] py-1"> {companyName}</p>
                 </a>
                 <div className="flex items-center space-x-1 mt-2">
                   {founder.founderSocialLinks.facebook && (
@@ -37,13 +47,7 @@ function Founders({ company }) {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      {" "}
-                      <img
-                        src="/socialLinks/facebook_icon.svg"
-                        width="15px"
-                        height="15px"
-                        className="object-contain"
-                      />
+                      <FaFacebookF size={12} />
                     </a>
                   )}
                   {founder.founderSocialLinks.twitter && (
@@ -52,13 +56,7 @@ function Founders({ company }) {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      {" "}
-                      <img
-                        src="/socialLinks/twitter_icon.svg"
-                        width="15px"
-                        height="15px"
-                        className="object-contain"
-                      />
+                      <FaTwitter size={12} />
                     </a>
                   )}
                   {founder.founderSocialLinks.linkedin && (
@@ -67,13 +65,7 @@ function Founders({ company }) {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      {" "}
-                      <img
-                        src="/socialLinks/linkedin_icon.svg"
-                        width="15px"
-                        height="15px"
-                        className="object-contain"
-                      />
+                      <FaLinkedinIn size={12} />
                     </a>
                   )}
                   {founder.founderSocialLinks.instagram && (
@@ -82,13 +74,16 @@ function Founders({ company }) {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      {" "}
-                      <img
-                        src="/socialLinks/instagram_icon.svg"
-                        width="15px"
-                        height="15px"
-                        className="object-contain"
-                      />
+                      <FaInstagram size={12} />
+                    </a>
+                  )}
+                  {founder.founderSocialLinks.mail && (
+                    <a
+                      href={founder.founderSocialLinks.mail}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <SiGmail size={12} />
                     </a>
                   )}
                 </div>

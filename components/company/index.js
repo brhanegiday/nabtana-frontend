@@ -8,8 +8,8 @@ function CompanyDetail({ company }) {
     <div className="pt-8 pb-8">
       <div className="xl:container  px-10  mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5">
-          <h1 className="text-shark-500 text-2xl">About</h1>
-          <div className="col-span-3 border-b border-gray-400 pb-2 w0-5/6">
+          <h1 className="text-shark-500 text-2xl">Company</h1>
+          <div className="col-span-3 border-b pb-2 w0-5/6">
             <div className="w-5/6">
               <div className="flex space-x-5 items-center">
                 <img
@@ -22,10 +22,10 @@ function CompanyDetail({ company }) {
                   <div className="flex items-center space-x-2">
                     {company.industry?.map((industryType, index) => (
                       <div
-                        className="bg-shark-300 py-1 px-3 rounded-md"
+                        className="bg-shark-200 py-1 px-3 rounded-md"
                         key={`compayID-${index}`}
                       >
-                        <p className="uppercase text-shark-500 text-[10px]">
+                        <p className="uppercase text-shark-500 font-bold text-[9px]">
                           {industryType}
                         </p>
                       </div>
@@ -34,10 +34,10 @@ function CompanyDetail({ company }) {
                   <div className="flex items-center space-x-2">
                     {company.status?.map((statusType, index) => (
                       <div
-                        className="bg-shark-300 py-1 px-3 rounded-md"
+                        className="bg-shark-200 py-1 px-3 rounded-md"
                         key={`company-status-${index}`}
                       >
-                        <p className="uppercase text-shark-500 text-[10px]">
+                        <p className="uppercase text-shark-500 font-bold text-[9px]">
                           {statusType}
                         </p>
                       </div>
@@ -46,7 +46,7 @@ function CompanyDetail({ company }) {
                 </div>
               </div>
               <div>
-                <NavLink />
+                <NavLink company={company} />
               </div>
               <div>
                 <AboutCompany companyDetail={company} />

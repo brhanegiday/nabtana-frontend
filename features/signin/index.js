@@ -80,7 +80,7 @@ function Signin() {
               <p className="text-nab text-shark-500">
                 Don<span>&apos;</span>t you have an account?
               </p>
-              <NextLink href="/signup">
+              <NextLink href="/register">
                 <a>
                   <p className="text-tango-500 text-nab font-bold">
                     Create an account

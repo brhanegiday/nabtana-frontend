@@ -1,4 +1,11 @@
 import Image from "next/image";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
 
 function CompanySummary({ company }) {
   console.log("summary", company);
@@ -9,7 +16,8 @@ function CompanySummary({ company }) {
           src={company.companyLogo}
           alt={company.alt}
           width="50px"
-          height="40px"
+          height="50px"
+          // layout="responsive"
         />
         <h3 className="">{company.companyName}</h3>
       </div>
@@ -30,63 +38,50 @@ function CompanySummary({ company }) {
         </div>
       </div>
       <div className="mt-5">
-        <div className="flex items-center space-x-2 mt-2">
-          {company.companySocialLinks.facebook && (
-            <a
-              href={company.companySocialLinks.facebook}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                src="/socialLinks/facebook_icon.svg"
-                width="18px"
-                height="18px"
-                className="object-contain"
-              />
-            </a>
-          )}
-          {company.companySocialLinks.twitter && (
+        <div className="flex items-center space-x-3">
+          {company.companySocialLinks?.twitter && (
             <a
               href={company.companySocialLinks.twitter}
               target="_blank"
               rel="noreferrer"
             >
-              <img
-                src="/socialLinks/twitter_icon.svg"
-                width="18px"
-                height="18px"
-                className="object-contain"
-              />
+              <FaTwitter size={15} />
             </a>
           )}
-          {company.companySocialLinks.linkedin && (
+          {company.companySocialLinks?.linkedin && (
             <a
               href={company.companySocialLinks.linkedin}
               target="_blank"
               rel="noreferrer"
             >
-              {" "}
-              <img
-                src="/socialLinks/linkedin_icon.svg"
-                width="18px"
-                height="18px"
-                className="object-contain"
-              />
+              <FaLinkedinIn size={15} />
             </a>
           )}
-          {company.companySocialLinks.instagram && (
+          {company.companySocialLinks?.facebook && (
+            <a
+              href={company.companySocialLinks.facebook}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaFacebookF size={15} />
+            </a>
+          )}
+          {company.companySocialLinks?.instagram && (
             <a
               href={company.companySocialLinks.instagram}
               target="_blank"
               rel="noreferrer"
             >
-              {" "}
-              <img
-                src="/socialLinks/instagram_icon.svg"
-                width="18px"
-                height="18px"
-                className="object-contain"
-              />
+              <FaInstagram size={15} />
+            </a>
+          )}
+          {company.companySocialLinks?.mail && (
+            <a
+              href={company.companySocialLinks.mail}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <SiGmail size={15} />
             </a>
           )}
         </div>

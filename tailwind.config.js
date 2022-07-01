@@ -1,11 +1,16 @@
 module.exports = {
+  darkMode: "class",
+  plugins: [require("flowbite/plugin"), require("tw-elements/dist/plugin")],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./features/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{html,js}",
+    "./node_modules/tw-elements/dist/js/**/*.js",
+    "./node_modules/flowbite/**/*.js",
   ],
   fontFamily: {
-    sans: ['"Open Sans"', "sans-serif"],
+    sans: ["Nunito", "sans-serif"],
   },
   theme: {
     extend: {
@@ -50,9 +55,8 @@ module.exports = {
         },
       },
       fontSize: {
-        nab: "0.9rem",
+        nab: "1rem",
       },
     },
   },
-  plugins: [],
 };

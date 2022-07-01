@@ -1,14 +1,14 @@
 import React from "react";
 import Layout from "../../features/layout/Layout";
 import Signup from "../../features/signup";
-function SignupPage() {
+function RegisterPage() {
   return (
     <div>
-      <Layout title="Sign Up">
+      <Layout title="Register your company">
         <Signup />
       </Layout>
     </div>
   );
 }
 
-export default SignupPage;
+export default RegisterPage;

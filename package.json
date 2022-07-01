@@ -10,13 +10,24 @@
     "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.5",
     "@heroicons/react": "^1.0.5",
+    "@honeybadger-io/js": "^3.2.8",
     "express": "^4.17.2",
+    "flowbite": "^1.4.7",
+    "formik": "^2.2.9",
+    "framer-motion": "^6.3.13",
     "next": "12.0.8",
     "next-auth": "^4.2.1",
+    "next-themes": "^0.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "uuid": "^8.3.2"
+    "react-icons": "^4.4.0",
+    "react-spinners": "^0.11.0",
+    "tw-elements": "^1.0.0-alpha12",
+    "uuid": "^8.3.2",
+    "yup": "^0.32.11",
+    "yup-password": "^0.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",
