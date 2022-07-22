@@ -1,6 +1,6 @@
 function AboutCompany({ companyDetail }) {
   return (
-    <div>
+    <>
       <div id="about">
         <h3 className="text-tango-500 font-semibold text-2xl">
           {companyDetail.companyName}
@@ -56,7 +56,7 @@ function AboutCompany({ companyDetail }) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

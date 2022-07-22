@@ -3,13 +3,13 @@ import NextLink from "next/link";
 
 function About() {
   return (
-    <div className="pt-10 pb-8 w-5/6 mx-auto md:w-3/5">
+    <div className="pt-10 pb-8 sm:w-5/6 mx-auto md:w-3/5">
       <div className="xl:container px-10  mx-auto">
-        <h1 className="text-shark-500 text-3xl font-normal pb-2 text-center">
+        <h1 className="text-shark-500 text-xl md:text-3xl font-semibold pb-2 text-center">
           How it works
         </h1>
         <div className="mt-3">
-          <p className="text-shark-400 text-text-nab">
+          <p className="text-shark-400 text-nab">
             Nabtana is a platform for connecting companies with a community. It
             provides information regarding Tigray-affiliated companies. Wide
             range of information is shared including status of company and
@@ -24,7 +24,7 @@ function About() {
           <h3 className="text-lg font-semibold text-shark-500 py-1">
             Register your company
           </h3>
-          <p className="text-shark-400 text-text-nab">
+          <p className="text-shark-400 text-nab">
             To register your company please fill the necessary information here.
             The team will review the data, which could take up to 48 hours.
             After the team has finished reviewing, you will receive a

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
 import { useTheme } from "next-themes";
-import { TranslateIcon } from "@heroicons/react/outline";
 import { BiSun } from "react-icons/bi";
 import { MdDarkMode } from "react-icons/md";
 import { HiTranslate } from "react-icons/hi";
@@ -18,7 +17,7 @@ function Header() {
 
   return (
     <header className="bg-[#FBFBFB] py-4 sticky top-0 z-50 drop-shadow-sm ">
-      <div className="xl:container flex justify-between items-center px-20 mx-auto">
+      <div className="xl:container flex justify-between items-center px-10 lg:px-20 mx-auto">
         <div>
           <NextLink href="/">
             <a className="font-semi-bold cursor-pointer">
@@ -31,11 +30,11 @@ function Header() {
             </a>
           </NextLink>
         </div>
-        <div className="hidden lg:flex space-x-6 items-center">
+        <div className="hidden md:flex space-x-6 items-center">
           <NextLink href="/">
             <a className="cursor-pointer">
               <p
-                className={` font-medium text-nab ${
+                className={` font-medium text-sm md:text-nab ${
                   router.pathname === "/" ? "text-tango-500" : "text-shark-500"
                 }`}
               >
@@ -46,7 +45,7 @@ function Header() {
           <NextLink href="/blog">
             <a className="cursor-pointer">
               <p
-                className={`font-medium text-nab ${
+                className={`font-medium text-sm md:text-nab ${
                   router.pathname === "/blog"
                     ? "text-tango-500"
                     : "text-shark-500"
@@ -59,7 +58,7 @@ function Header() {
           <NextLink href="/how-it-works">
             <a className="cursor-pointer">
               <p
-                className={`font-medium text-nab ${
+                className={`font-medium text-sm md:text-nab ${
                   router.pathname === "/how-it-works"
                     ? "text-tango-500"
                     : "text-shark-500"
@@ -70,11 +69,11 @@ function Header() {
             </a>
           </NextLink>
         </div>
-        <div className="flex space-x-4 items-center">
+        <div className="flex space-x-2 sm:space-x-4 items-center">
           <NextLink href="/login">
             <a className="cursor-pointer">
               <p
-                className={`font-medium text-nab ${
+                className={`font-medium text-sm md:text-nab ${
                   router.pathname === "/login"
                     ? "text-tango-500"
                     : "text-shark-500"

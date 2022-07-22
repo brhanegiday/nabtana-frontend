@@ -55,7 +55,7 @@ module.exports = {
         },
       },
       fontSize: {
-        nab: "1rem",
+        nab: "15px",
       },
     },
   },

@@ -50,24 +50,39 @@ function Signup({ session }) {
     setLoading(false);
   };
   return (
-    <>
-      <div className="w-4/5 m-auto justify-center items-center py-10">
-        <h1 className="leading-6 text-shark-900 text-2xl">
+    <div className="xl:container  mx-auto">
+      <div className="lg:w-4/5 m-auto py-10">
+        <h1 className="leading-6 text-shark-900 text-2xl text-center">
           Register your company
         </h1>
-        <p className="py-3 text-sm text-shark-500">
+        <p className="py-3 text-sm text-shark-500 text-center">
           Create an account and start the adventure
         </p>
-        <div className="bg-white border-[#A7A199] border rounded-md px-10 pt-7 py-5 grid grid-cols-1 md:grid-cols-4 gap-x0-4">
-          <div className="pl-3 col-span-1">
-            <h2 className="text-shark-900 text-3xl">Company Info</h2>
+        <div className="bg-white border-[#A7A199] border rounded-md px-10 pt-7 py-5 md:flex">
+          <div className="pl-3 w-2/6">
+            <h2 className="text-shark-900 text-2xl">Company Info</h2>
+            <p className="py-1 text-shark-400 text-nab">
+              Fill information related to your company
+            </p>
           </div>
-          <div className="pl-3 col-span-3">
+          <div className="pl-3 w-4/6">
             <Formik
               initialValues={{
-                fullName: "",
+                companyName: "",
                 email: "",
                 password: "",
+                status: "",
+                website: "",
+                yearFounded: "",
+                fileUpload: "",
+                category: "",
+                bio: "",
+                description: "",
+                firstName: "",
+                lastName: "",
+                founder_email: "",
+                position: "",
+                founder_bio: "",
               }}
               validateOnBlur={false}
               validateOnChange={false}
@@ -77,6 +92,9 @@ function Signup({ session }) {
                 password: Yup.string()
                   .min(8, "password must be at least 8 characters")
                   .required(),
+                firstName: Yup.string().required(),
+                lastName: Yup.string().required(),
+                founder_email: Yup.string().email().required(),
               })}
               onSubmit={submit}
             >
@@ -103,7 +121,7 @@ function Signup({ session }) {
                         onChange={formik.handleChange}
                         value={formik.values.companyName}
                         autoComplete="companyName"
-                        className="w-full focus:outline-none rounded-md border-2 py-2 pl-4 sm:text-sm placeholder-gray-400 focus:ring-0"
+                        className="inputElement"
                         placeholder="Company name"
                       />
                       {formik.errors.companyName && (
@@ -118,7 +136,7 @@ function Signup({ session }) {
                         id="email"
                         className="text-shark-900 text-sm"
                       >
-                        Email
+                        Email <span className="text-red-400">*</span>
                       </label>
                       <input
                         type="email"
@@ -127,7 +145,7 @@ function Signup({ session }) {
                         onChange={formik.handleChange}
                         value={formik.values.email}
                         autoComplete="email"
-                        className="w-full focus:outline-none rounded-md border-2 py-2 pl-4 sm:text-sm placeholder-gray-400 focus:ring-0"
+                        className="inputElement"
                         placeholder="yourname@ex.com"
                       />
                       {formik.errors.email && (
@@ -144,7 +162,7 @@ function Signup({ session }) {
                         id="password"
                         className="text-shark-900 text-sm"
                       >
-                        Password
+                        Password <span className="text-red-400">*</span>
                       </label>
                       <input
                         type="password"
@@ -153,7 +171,7 @@ function Signup({ session }) {
                         onChange={formik.handleChange}
                         value={formik.values.password}
                         autoComplete="current-password"
-                        className="w-full focus:outline-none rounded-md border-2 py-2 pl-4 placeholder-gray-400 focus:ring-0 sm:text-sm"
+                        className="inputElement"
                         placeholder="Password"
                       />
                       {formik.errors.password && (
@@ -172,6 +190,9 @@ function Signup({ session }) {
                       </label>
                       <select
                         id="status"
+                        name="status"
+                        onChange={formik.handleChange}
+                        value={formik.values.password}
                         className="bg-white border border-gray-300 text-shar-500 text-sm rounded-lg focus:ring-tango-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-400 dark:placeholder-gray-400 dark:text-white dark:focus:ring-tango-500 dark:focus:border-tango-500"
                       >
                         <option value="Idea/concept">Idea/concept</option>
@@ -198,7 +219,7 @@ function Signup({ session }) {
                         onChange={formik.handleChange}
                         value={formik.values.country}
                         autoComplete="country"
-                        className="w-full focus:outline-none rounded-md border-2 py-2 pl-4 sm:text-sm placeholder-gray-400 focus:ring-0"
+                        className="inputElement"
                         placeholder="HQ location"
                       />
                       {formik.errors.country && (
@@ -222,7 +243,7 @@ function Signup({ session }) {
                         onChange={formik.handleChange}
                         value={formik.values.city}
                         autoComplete="city"
-                        className="w-full focus:outline-none rounded-md border-2 py-2 pl-4 sm:text-sm placeholder-gray-400 focus:ring-0"
+                        className="inputElement"
                         placeholder="city"
                       />
                       {formik.errors.city && (
@@ -234,26 +255,22 @@ function Signup({ session }) {
                   </div>
                   <div className="pt-3 md:flex md:gap-x-10">
                     <div className="w-3/5 relative">
-                      <label
-                        htmlFor="url"
-                        id="url"
-                        className="text-shark-900 text-sm"
-                      >
+                      <label htmlFor="url" className="text-shark-900 text-sm">
                         Website URL(if applicable)
                       </label>
                       <input
                         type="text"
-                        name="url"
-                        id="url"
+                        name="website"
+                        id="website"
                         onChange={formik.handleChange}
-                        value={formik.values.url}
-                        autoComplete="url"
-                        className="w-full focus:outline-none rounded-md border-2 py-2 pl-4 sm:text-sm placeholder-gray-400 focus:ring-0"
-                        placeholder="URL"
+                        value={formik.values.website}
+                        autoComplete="website"
+                        className="inputElement"
+                        placeholder="xyz.com"
                       />
-                      {formik.errors.url && (
+                      {formik.errors.website && (
                         <div className="text-xs font-light text-red-500 mt-1 ml-4">
-                          {formik.errors.url}
+                          {formik.errors.website}
                         </div>
                       )}
                     </div>
@@ -272,7 +289,7 @@ function Signup({ session }) {
                         onChange={formik.handleChange}
                         value={formik.values.yearFounded}
                         autoComplete="yearFounded"
-                        className="w-full focus:outline-none rounded-md border-2 py-2 pl-4 sm:text-sm placeholder-gray-400 focus:ring-0"
+                        className="inputElement"
                         placeholder="Year founded"
                       />
                       {formik.errors.yearFounded && (
@@ -294,18 +311,18 @@ function Signup({ session }) {
                       >
                         <div className="flex flex-col justify-center items-center pt-5 pb-6">
                           <svg
-                            className="mb-3 w-10 h-10 text-gray-400"
-                            fill="none"
+                            className="mx-auto h-12 w-12 text-gray-400"
                             stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 48 48"
+                            aria-hidden="true"
                           >
                             <path
+                              d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                              strokeWidth="2"
                               strokeLinecap="round"
                               strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                            ></path>
+                            />
                           </svg>
                           <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
                             <span className="font-semibold">
@@ -318,7 +335,8 @@ function Signup({ session }) {
                           </p>
                         </div>
                         <input
-                          id="dropzone-file"
+                          id="fileUpload"
+                          name="fileUpload"
                           type="file"
                           className="hidden"
                         />
@@ -362,7 +380,7 @@ function Signup({ session }) {
                       onChange={formik.handleChange}
                       value={formik.values.bio}
                       autoComplete="bio"
-                      className="w-full focus:outline-none rounded-md border-2 py-2 pl-4 sm:text-sm placeholder-gray-400 focus:ring-0"
+                      className="inputElement"
                       placeholder="your company moto"
                     />
                     {formik.errors.bio && (
@@ -388,7 +406,7 @@ function Signup({ session }) {
                       onChange={formik.handleChange}
                       value={formik.values.description}
                       autoComplete="description"
-                      className="w-full focus:outline-none rounded-md border-2 py-2 pl-4 sm:text-sm placeholder-gray-400 focus:ring-0"
+                      className="inputElement"
                       placeholder="describe your business/product"
                     />
                     {formik.errors.description && (
@@ -397,200 +415,172 @@ function Signup({ session }) {
                       </div>
                     )}
                   </div>
+                  {/* Founders */}
+                  <div className="border-[#b1b0b0] col-span-4 my-10 border-b w-full" />
+                  <>
+                    <div className="pl-3 col-span-1">
+                      <h2 className="text-shark-900 text-3xl">Founders</h2>
+                    </div>
+                    <div className="pl-3 col-span-3">
+                      <div className="md:flex md:gap-x-10">
+                        <div className="w-3/5 relative">
+                          <label
+                            htmlFor="firstName"
+                            id="firstName"
+                            className="text-shark-900 text-sm"
+                          >
+                            First Name <span className="text-red-400">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            name="firstName"
+                            id="firstName"
+                            onChange={formik.handleChange}
+                            value={formik.values.firstName}
+                            autoComplete="firstName"
+                            className="inputElement"
+                            placeholder="First name"
+                          />
+                          {formik.errors.firstName && (
+                            <div className="text-xs font-light text-red-500 mt-1 ml-4">
+                              {formik.errors.firstName}
+                            </div>
+                          )}
+                        </div>
+                        <div className="w-3/5 relative">
+                          <label
+                            htmlFor="lastName"
+                            id="lastName"
+                            className="text-shark-900 text-sm"
+                          >
+                            Last Name <span className="text-red-400">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            name="lastName"
+                            id="lastName"
+                            onChange={formik.handleChange}
+                            value={formik.values.lastName}
+                            autoComplete="lastName"
+                            className="inputElement"
+                            placeholder="Last name"
+                          />
+                          {formik.errors.lastName && (
+                            <div className="text-xs font-light text-red-500 mt-1 ml-4">
+                              {formik.errors.lastName}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      <div className="pt-3 md:flex md:gap-x-10">
+                        <div className="w-3/5 relative">
+                          <label
+                            htmlFor="email"
+                            id="email"
+                            className="text-shark-900 text-sm"
+                          >
+                            Email<span className="text-red-400">*</span>
+                          </label>
+                          <input
+                            type="email"
+                            name="founder_email"
+                            id="founder_email"
+                            onChange={formik.handleChange}
+                            value={formik.values.founder_email}
+                            autoComplete="founder_email"
+                            className="inputElement"
+                            placeholder="yourname@ex.com"
+                          />
+                          {formik.errors.founder_email && (
+                            <div className="text-xs font-light text-red-500 mt-1 ml-4">
+                              {formik.errors.founder_email}
+                            </div>
+                          )}
+                        </div>
+                        <div className="w-3/5 relative">
+                          <label
+                            htmlFor="position"
+                            id="position"
+                            className="text-shark-900 text-sm"
+                          >
+                            Position <span className="text-red-400">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            name="position"
+                            id="position"
+                            onChange={formik.handleChange}
+                            value={formik.values.position}
+                            autoComplete="position"
+                            className="inputElement"
+                            placeholder="CEO"
+                          />
+                          {formik.errors.position && (
+                            <div className="text-xs font-light text-red-500 mt-1 ml-4">
+                              {formik.errors.position}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="py-3 w-4/6 relative">
+                        <label htmlFor="bio" className="text-shark-900 text-sm">
+                          Bio
+                          <span className="text-red-400">*</span>
+                        </label>
+                        <textarea
+                          type="text"
+                          name="founder_bio"
+                          id="founder_bio"
+                          rows={4}
+                          onChange={formik.handleChange}
+                          value={formik.values.founder_bio}
+                          autoComplete="founder_bio"
+                          className="inputElement"
+                          placeholder="Describe yourself"
+                        />
+                        {formik.errors.bio && (
+                          <div className="text-xs font-light text-red-500 mt-1 ml-4">
+                            {formik.errors.founder_bio}
+                          </div>
+                        )}
+                      </div>
+                      {/* Signup Button  */}
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className="mt-5 mb-3 py-2 px-7 rounded-md bg-tango-500 hover:bg-tango-600 transition-colors duration-150 ease-out"
+                      >
+                        <span className="text-sm font-bold text-white uppercase">
+                          Sign Up
+                        </span>
+                        {loading && (
+                          <div className="ml-2 flex items-center">
+                            <ClipLoader color={"white"} size={13} />
+                          </div>
+                        )}
+                      </button>
+                      <div className="flex space-x-1">
+                        <p className="text-nab text-shark-500">
+                          Already have an account?
+                        </p>
+                        <NextLink href="/login">
+                          <a>
+                            <p className="text-tango-500 text-nab font-bold">
+                              Login
+                            </p>
+                          </a>
+                        </NextLink>
+                      </div>
+                    </div>
+                  </>
                 </Form>
               )}
             </Formik>
           </div>
-          <div className="border-[#b1b0b0] col-span-4 my-10 border-b w-full" />
-          <>
-            <div className="pl-3 col-span-1">
-              <h2 className="text-shark-900 text-3xl">Founders</h2>
-            </div>
-            <div className="pl-3 col-span-3">
-              <Formik
-                initialValues={{
-                  fullName: "",
-                  lastName: "",
-                  email: "",
-                  position: "",
-                }}
-                validateOnBlur={false}
-                validateOnChange={false}
-                validationSchema={Yup.object().shape({
-                  firstName: Yup.string().required(),
-                  lastName: Yup.string().required(),
-                  email: Yup.string().email().required(),
-                  position: Yup.string().required(),
-                })}
-                onSubmit={submit}
-              >
-                {(formik) => (
-                  <Form className="mt-1">
-                    {error && error.error && (
-                      <div className="bg-red-400 py-3 px-5 text-white">
-                        {error.message}
-                      </div>
-                    )}
-                    <div className="md:flex md:gap-x-10">
-                      <div className="w-3/5 relative">
-                        <label
-                          htmlFor="firstName"
-                          id="firstName"
-                          className="text-shark-900 text-sm"
-                        >
-                          First Name <span className="text-red-400">*</span>
-                        </label>
-                        <input
-                          type="text"
-                          name="firstName"
-                          id="firstName"
-                          onChange={formik.handleChange}
-                          value={formik.values.firstName}
-                          autoComplete="firstName"
-                          className="w-full focus:outline-none rounded-md border-2 py-2 pl-4 sm:text-sm placeholder-gray-400 focus:ring-0"
-                          placeholder="First name"
-                        />
-                        {formik.errors.firstName && (
-                          <div className="text-xs font-light text-red-500 mt-1 ml-4">
-                            {formik.errors.firstName}
-                          </div>
-                        )}
-                      </div>
-                      <div className="w-3/5 relative">
-                        <label
-                          htmlFor="lastName"
-                          id="lastName"
-                          className="text-shark-900 text-sm"
-                        >
-                          Last Name <span className="text-red-400">*</span>
-                        </label>
-                        <input
-                          type="text"
-                          name="lastName"
-                          id="lastName"
-                          onChange={formik.handleChange}
-                          value={formik.values.lastName}
-                          autoComplete="lastName"
-                          className="w-full focus:outline-none rounded-md border-2 py-2 pl-4 sm:text-sm placeholder-gray-400 focus:ring-0"
-                          placeholder="Last name"
-                        />
-                        {formik.errors.lastName && (
-                          <div className="text-xs font-light text-red-500 mt-1 ml-4">
-                            {formik.errors.lastName}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    <div className="pt-3 md:flex md:gap-x-10">
-                      <div className="w-3/5 relative">
-                        <label
-                          htmlFor="email"
-                          id="email"
-                          className="text-shark-900 text-sm"
-                        >
-                          Email<span className="text-red-400">*</span>
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          onChange={formik.handleChange}
-                          value={formik.values.email}
-                          autoComplete="email"
-                          className="w-full focus:outline-none rounded-md border-2 py-2 pl-4 sm:text-sm placeholder-gray-400 focus:ring-0"
-                          placeholder="yourname@ex.com"
-                        />
-                        {formik.errors.email && (
-                          <div className="text-xs font-light text-red-500 mt-1 ml-4">
-                            {formik.errors.email}
-                          </div>
-                        )}
-                      </div>
-                      <div className="w-3/5 relative">
-                        <label
-                          htmlFor="position"
-                          id="position"
-                          className="text-shark-900 text-sm"
-                        >
-                          Position <span className="text-red-400">*</span>
-                        </label>
-                        <input
-                          type="text"
-                          name="position"
-                          id="position"
-                          onChange={formik.handleChange}
-                          value={formik.values.position}
-                          autoComplete="position"
-                          className="w-full focus:outline-none rounded-md border-2 py-2 pl-4 sm:text-sm placeholder-gray-400 focus:ring-0"
-                          placeholder="CEO"
-                        />
-                        {formik.errors.position && (
-                          <div className="text-xs font-light text-red-500 mt-1 ml-4">
-                            {formik.errors.position}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="py-3 w-4/6 relative">
-                      <label
-                        htmlFor="bio"
-                        id="bio"
-                        className="text-shark-900 text-sm"
-                      >
-                        Bio
-                        <span className="text-red-400">*</span>
-                      </label>
-                      <textarea
-                        type="text"
-                        name="bio"
-                        id="bio"
-                        rows={4}
-                        onChange={formik.handleChange}
-                        value={formik.values.bio}
-                        autoComplete="bio"
-                        className="w-full focus:outline-none rounded-md border-2 py-2 pl-4 sm:text-sm placeholder-gray-400 focus:ring-0"
-                        placeholder="Describe yourself"
-                      />
-                      {formik.errors.bio && (
-                        <div className="text-xs font-light text-red-500 mt-1 ml-4">
-                          {formik.errors.bio}
-                        </div>
-                      )}
-                    </div>
-                  </Form>
-                )}
-              </Formik>
-              {/* Signup Button  */}
-              <button
-                type="submit"
-                disabled={loading}
-                className="mt-5 mb-3 py-2 px-7 rounded-md bg-tango-500 hover:bg-tango-600 transition-colors duration-150 ease-out"
-              >
-                <span className="text-sm font-bold text-white uppercase">
-                  Sign Up
-                </span>
-                {loading && (
-                  <div className="ml-2 flex items-center">
-                    <ClipLoader color={"white"} size={13} />
-                  </div>
-                )}
-              </button>
-              <div className="flex space-x-1">
-                <p className="text-nab text-shark-500">
-                  Already have an account?
-                </p>
-                <NextLink href="/login">
-                  <a>
-                    <p className="text-tango-500 text-nab font-bold">Login</p>
-                  </a>
-                </NextLink>
-              </div>
-            </div>
-          </>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

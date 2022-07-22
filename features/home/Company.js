@@ -6,8 +6,8 @@ function Company({ company }) {
   return (
     <NextLink href={`/company/${company.companySlug}`}>
       <a>
-        <div className="pt-3 hover:bg-mercury-300 w-fit transition duration-150 ease-out">
-          <div className="flex items-center space-x-8 py-3">
+        <div className="pt-3 hover:bg-mercury-300 transition duration-150 ease-out">
+          <div className="sm:flex items-center sm:space-x-8 py-3">
             <div className="rounded-full">
               <Image
                 src={company.companyLogo}
@@ -23,7 +23,7 @@ function Company({ company }) {
                 </h3>
                 <p className="text-shark-500 text-xs">{company.location}</p>
               </div>
-              <p className="text-shark-500 text-nab w-3/4">
+              <p className="text-shark-500 text-nab sm:w-3/4">
                 {company.companyExcerpt}
               </p>
               <div className="flex items-center space-x-2 py-3">

@@ -26,7 +26,7 @@ function Filter() {
     "Inactive",
   ];
   return (
-    <div className="border-[#A7A199] border-[1px] p-6 rounded-md bg-white-500 w-full">
+    <div className="border-[#A7A199] border p-6 rounded-md bg-white-500 w-full">
       {/* Industry filter */}
       <div className="flex justify-between items-center py-1">
         <h4 className="text-shark-500 text-lg font-semibold">Industry</h4>
@@ -48,9 +48,9 @@ function Filter() {
               <div key={index} className="flex space-x-2 items-center">
                 <input
                   type="checkbox"
-                  className="appearance-none2 checked:bg-shark-500 checked:border-transparent first:checked"
+                  className="checked:bg-shark-500 checked:border-transparent first:checked"
                 />
-                <p className="text-shark-500 text-[0.9rem]">{industry}</p>
+                <p className="text-shark-500 text-sm">{industry}</p>
               </div>
             ))}
           </div>
@@ -81,7 +81,7 @@ function Filter() {
                 type="checkbox"
                 className="appearance-none1 checked:bg-sharktext-shark-500 checked:border-transparent first:checked"
               />
-              <p className="text-shark-500 text-[0.9rem]">{status}</p>
+              <p className="text-shark-500 text-sm">{status}</p>
             </div>
           ))}
         </div>

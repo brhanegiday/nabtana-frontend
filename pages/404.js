@@ -12,7 +12,7 @@ function PageNotFound() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="h-screen w-full md:w-2/5 mx-auto py-10">
-        <div className="h-[20vw] relative hover:skew-y-2 transition-transform duration-500">
+        <div className="h-[20vw] relative">
           <Image
             src="/page-not-found/Page_not_found.png"
             alt="secure_login"
@@ -30,12 +30,12 @@ function PageNotFound() {
           </p>
 
           <NextLink href="/">
-            <button className="py-2 px-7 shadow-md border-[1px] flex items-center space-x-2 group border-tango-500 rounded-full hover:bg-tango-500 transition-colors duration-300">
+            <a className="py-2 px-7 shadow-md border-[1px] flex items-center space-x-2 group border-tango-500 rounded-full hover:bg-tango-500 transition-colors duration-300">
               <ArrowNarrowLeftIcon className="w-5 h-5 text-tango-500 group-hover:text-white" />
               <p className="text-tango-500 group-hover:text-white text-nab font-bold uppercase">
                 home
               </p>
-            </button>
+            </a>
           </NextLink>
         </div>
       </div>

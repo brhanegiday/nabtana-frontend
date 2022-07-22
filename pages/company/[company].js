@@ -15,11 +15,9 @@ function CompanyPage() {
     setCompanyData(data);
   }, [router]);
   return (
-    <div>
-      <Layout title={companyData.companyName}>
-        <CompanyDetail company={companyData} />
-      </Layout>
-    </div>
+    <Layout title={companyData.companyName}>
+      <CompanyDetail company={companyData} />
+    </Layout>
   );
 }
 

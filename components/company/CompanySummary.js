@@ -8,7 +8,6 @@ import {
 import { SiGmail } from "react-icons/si";
 
 function CompanySummary({ company }) {
-  console.log("summary", company);
   return (
     <div className="bg-white py-3 px-5 border-[1px] border-gray-400 rounded-md w-full">
       <div className="flex items-center space-x-2">
@@ -17,9 +16,8 @@ function CompanySummary({ company }) {
           alt={company.alt}
           width="50px"
           height="50px"
-          // layout="responsive"
         />
-        <h3 className="">{company.companyName}</h3>
+        <h3 className="text-shark-500">{company.companyName}</h3>
       </div>
       <div className="mt-3">
         <div className="flex justify-between items-center">
