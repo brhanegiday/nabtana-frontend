@@ -16,9 +16,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
-  font-family: "Inter", sans-serif;
+  font-family: "Inter","Aclonica", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -31,3 +29,13 @@ a {
   box-sizing: border-box;
 }
 
+.logo-gradient-text {
+  background-color: #f809a7;
+  background-image: linear-gradient(45deg, #f809a7, #fe9800);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+  /* background-image: conic-gradient(#f809a7, #fe9800); */
+}

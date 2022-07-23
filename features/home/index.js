@@ -35,7 +35,7 @@ function Home() {
         <div className="md:grid grid-cols-1 md:grid-cols-6 md:gap-20">
           {/* left column */}
           <div className="w-full sm:w-[90%] col-span-2">
-            <h1 className="text-tango-500 text-xl md:text-3xl font-bold py-1">
+            <h1 className="text-shark-500 text-xl md:text-2xl font-semibold py-1">
               How it works
             </h1>
             <p className="text-shark-500 text-sm py-2">
@@ -46,18 +46,18 @@ function Home() {
             </p>
             <div className="mt-3">
               <NextLink href="/how-it-works">
-                <button className="py-2 px-6 bg-shark-500 text-tango-500 font-bold rounded-md border text-xs">
+                <button className="py-2 px-6 text-tango-400 font-semibold rounded-md border border-tango-500 text-xs transition duration-300 hover:bg-gradient-to-r from-tango-500 hover:to-california-500 hover:text-white">
                   LEARN MORE
                 </button>
               </NextLink>
             </div>
-            <div className="hidden md:block mt-14">
+            <div className="hidden md:block mt-14 sticky top-2">
               <Filter />
             </div>
           </div>
           {/* Right column */}
           <div className="mt-5 md:mt-0 col-span-4">
-            <h1 className="text-shark-500 text-xl md:text-3xl font-semibold py-1">
+            <h1 className="text-shark-500 text-xl md:text-2xl font-semibold py-1">
               Startup Directory
             </h1>
             <p className="text-shark-500 text-nab">

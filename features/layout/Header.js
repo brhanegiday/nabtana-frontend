@@ -16,17 +16,15 @@ function Header() {
   if (!mounted) return null;
 
   return (
-    <header className="bg-[#FBFBFB] py-4 sticky top-0 z-50 drop-shadow-sm ">
+    <header className="bg-[#FBFBFB] py-2 sticky top-0 z-50 drop-shadow-sm ">
       <div className="xl:container flex justify-between items-center px-10 lg:px-20 mx-auto">
         <div>
           <NextLink href="/">
-            <a className="font-semi-bold cursor-pointer">
-              <img
-                src="/header/NABTANA.svg"
-                alt="Nabtana Logo"
-                width="150px"
-                height="15px"
-              />
+            <a className="font-semi-bold">
+              <h1 className="text-2xl text-shark-500 font-aclonica uppercase logo-gradient-text">
+                Nabtana
+                <span className="text-4xl text-tango-500">.</span>
+              </h1>
             </a>
           </NextLink>
         </div>

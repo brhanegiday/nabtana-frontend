@@ -34,7 +34,7 @@ function About() {
           <div className="mt-3">
             <NextLink href="/register">
               <a>
-                <button className="py-[0.4rem] px-10 uppercase rounded-full font-bold border-[1px] text-tango-500 bg-shark-500 border-[#1D2228] text-sm">
+                <button className="py-2 px-8 uppercase rounded-md font-semibold border text-tango-400 border-tango-400 text-sm">
                   Register
                 </button>
               </a>

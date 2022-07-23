@@ -9,25 +9,27 @@ module.exports = {
     "./node_modules/tw-elements/dist/js/**/*.js",
     "./node_modules/flowbite/**/*.js",
   ],
-  fontFamily: {
-    sans: ["Nunito", "sans-serif"],
-  },
+
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        aclonica: ["Aclonica"],
+      },
       backgroundColor: ["checked"],
       borderColor: ["checked"],
       colors: {
         tango: {
-          50: "#fff9f4",
-          100: "#fff2e9",
-          200: "#fee0c8",
-          300: "#fdcda7",
-          400: "#fca764",
-          500: "#FB8122",
-          600: "#e2741f",
-          700: "#bc611a",
-          800: "#974d14",
-          900: "#7b3f11",
+          50: "#fff3fb",
+          100: "#fee6f6",
+          200: "#fdc2e9",
+          300: "#fc9ddc",
+          400: "#fa53c1",
+          500: "#f809a7",
+          600: "#df0896",
+          700: "#ba077d",
+          800: "#950564",
+          900: "#7a0452",
         },
         shark: {
           50: "#f4f4f4",
@@ -40,6 +42,18 @@ module.exports = {
           700: "#161a1e",
           800: "#111418",
           900: "#0e1114",
+        },
+        california: {
+          50: "#fffaf2",
+          100: "#fff5e6",
+          200: "#ffe5bf",
+          300: "#ffd699",
+          400: "#feb74d",
+          500: "#fe9800",
+          600: "#e58900",
+          700: "#bf7200",
+          800: "#985b00",
+          900: "#7c4a00",
         },
         mercury: {
           50: "#fefefe",
