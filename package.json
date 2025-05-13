@@ -24,10 +24,10 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.4.0",
-    "react-spinners": "^0.11.0",
+    "react-spinners": "^0.13.0",
     "tw-elements": "^1.0.0-alpha12",
     "uuid": "^8.3.2",
-    "yup": "^0.32.11",
+    "yup": "^1.0.0",
     "yup-password": "^0.2.2"
   },
   "devDependencies": {
